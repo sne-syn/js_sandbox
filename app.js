@@ -49,3 +49,16 @@ const numbers = [1, 2, 3, 4, 5];
 numbers.push(6);
 
 console.log(numbers);
+
+//Type conversion
+
+let val;
+
+//Number to string 
+val = 5;
+
+//Output
+
+console.log(val);
+console.log(typeof val);
+console.log(val.length);
