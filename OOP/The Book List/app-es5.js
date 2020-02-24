@@ -31,7 +31,7 @@ UI.prototype.showAlert = function (message, className) {
     div.appendChild(document.createTextNode(message));
     container.insertBefore(div, form);
 
-    setTimeout(function(){
+    setTimeout(function () {
         document.querySelector('.alert').remove();
     }, 3000);
 };
@@ -42,8 +42,7 @@ UI.prototype.clearfields = function () {
     document.getElementById('isbn').value = '';
 };
 
-
-document.getElementById('book-form').addEventListener('submit', function (evt) {
+function addBook(evt) {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     const isbn = document.getElementById('isbn').value;
@@ -63,4 +62,18 @@ document.getElementById('book-form').addEventListener('submit', function (evt) {
     }
 
     evt.preventDefault();
-});
+}
+
+function deleteBook(evt) {
+    if (evt.target.className === 'delete') {
+        console.log('delete');
+    } else {
+        console.log('snmth wrong');
+    }
+
+    evt.preventDefault();
+}
+
+// Event Listeners
+document.getElementById('book-form').addEventListener('submit', addBook);
+document.getElementById('book-list').addEventListener('click', deleteBook);
