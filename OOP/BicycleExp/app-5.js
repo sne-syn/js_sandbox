@@ -43,9 +43,14 @@ function addBookHandler() {
     const brand = document.getElementById('brand').value;
     const model = document.getElementById('model').value;
     const price = document.getElementById('price').value;
-    const type = document.getElementById('type').value;
-    const mark = document.getElementById('mark').value;
     const isbn = document.getElementById('isbn').value;
+
+    const typeTarget = document.getElementById('type');
+    const markTarget = document.getElementById('mark');
+    const type = typeTarget.options[typeTarget.selectedIndex].text;
+    const mark = markTarget.options[markTarget.selectedIndex].text;
+
+    console.log(brand, model, price, type, mark, isbn);
 
     const ui = new UI();
     const bicycle = new Bicycle(brand, model, price, type, mark, isbn);
