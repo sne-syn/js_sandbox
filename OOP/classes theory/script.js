@@ -92,7 +92,7 @@ class Bicycle {
     }
 
     getMoreInfo() {
-        return `We are glad to present you our ${this.mark} model of ${this.brand} bicycle. This ${this.model} model is a great for ${this.type} activity.`
+        return `We are glad to present you our ${this.mark} model of ${this.brand} bicycle. This ${this.model} model is a great for ${this.type} activity.`;
     }
 
     checkDiscount(discount) {
