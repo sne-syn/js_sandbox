@@ -1,7 +1,7 @@
 const form = document.getElementById('card-form');
 const cardList = document.getElementById('card-list');
 
-function Bicycle (brand, model, price, availability, type, mark, isbn) {
+function Bicycle (brand, model, price, availability, type, mark, isbn, imgAlt) {
     this.brand = brand;
     this.model = model;
     this.price = price;
@@ -9,6 +9,8 @@ function Bicycle (brand, model, price, availability, type, mark, isbn) {
     this.type = type;
     this.mark = mark;
     this.isbn = isbn;
+    // this.img = img;
+    this.imgAlt = imgAlt;
 }
 
 // Local Storage
@@ -34,6 +36,7 @@ UI.prototype.addCard = function(bicycle) {
     <td>${bicycle.type}</td>
     <td>${bicycle.mark}</td>
     <td>${bicycle.isbn}</td>
+    <td>${bicycle.imgAlt}</td>
     <td><a href="#" class="delete">X</a></td>
     `;
     cardList.appendChild(row);
@@ -59,23 +62,18 @@ UI.prototype.deleteCard = function(target) {
 };
 
 UI.prototype.clearFields = function() {
-    document.getElementById('brand').value = '';
-    document.getElementById('model').value = '';
-    document.getElementById('price').value = '';
-    document.getElementById('isbn').value = '';
+    form.reset();
 };
 
 // Handlers
 
-// function getCardFromStoreHandler() {
-//     Store.getCardFromStore();
-// }
 
 function addCardHandler(evt) {
     const brand = document.getElementById('brand').value;
     const model = document.getElementById('model').value;
     const price = document.getElementById('price').value;
     const isbn = document.getElementById('isbn').value;
+    const imgAlt = document.getElementById('img-alt').value;
 
     const availabilityTarget = document.getElementById('availability');
     const typeTarget = document.getElementById('type');
@@ -86,10 +84,10 @@ function addCardHandler(evt) {
     const mark = markTarget.options[markTarget.selectedIndex].text;
 
 
-    console.log(brand, model, price, availability, type, mark, isbn);
+    console.log(brand, model, price, availability, type, mark, isbn, imgAlt);
 
     const ui = new UI();
-    const bicycle = new Bicycle(brand, model, price, availability, type, mark, isbn);
+    const bicycle = new Bicycle(brand, model, price, availability, type, mark, isbn, imgAlt);
 
     if (brand === '' || model === '' || price === ''|| isbn === '') {
         ui.showAlert('Please fill in all fields', 'error');

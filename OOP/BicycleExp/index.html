@@ -46,7 +46,7 @@
                 <div class="six columns">
                     <label for="availability">Availability</label>
                     <select class="u-full-width" id="availability">
-                        <option value="stock">In Stock</option>
+                        <option value="stock" selected>In Stock</option>
                         <option value="order">Special Order</option>
                     </select>
                 </div>
@@ -56,16 +56,17 @@
                 <div class="six columns">
                     <label for="type">Type</label>
                     <select class="u-full-width" id="type">
-                        <option value="sport">Sport</option>
+                        <option value="sport" selected>Sport</option>
                         <option value="touring">Touring</option>
                         <option value="cyclocross">Cyclocross</option>
                         <option value="mountain">Mountain</option>
                     </select>
                 </div>
                 <div class="six columns">
-                    <label for="mark">Mark</label>
+                    <label for="mark">Special Mark</label>
                     <select class="u-full-width" id="mark">
-                        <option value="new">New item</option>
+                            <option value="regular" selected>Regular</option>
+                        <option value="new">New</option>
                         <option value="bestseller">Bestseller</option>
                     </select>
                 </div>
@@ -74,6 +75,20 @@
                 <label for="isbn">ISBN#</label>
                 <input type="text" id="isbn" class="u-full-width">
             </div>
+            <div>
+                <label for="img-alt">Image Alt</label>
+                <input type="text" id="img-alt" class="u-full-width" placeholder="Describe a new bicycle here...">
+            </div>
+            <fieldset class="">
+                <label class="">Upload Bicycle foto</label>
+                <div class="">
+                    <div class="">
+                        <input type="file" id="images" name="images" class="">
+                    </div>
+                    <div class=""></div>
+                </div>
+            </fieldset>
+
             <button type="submit" value="submit" class="u-full-width">Submit</button>
         </form>
 
@@ -85,8 +100,9 @@
                     <th>Price</th>
                     <th>Availability</th>
                     <th>Type</th>
-                    <th>Mark</th>
+                    <th>Special Mark</th>
                     <th>ISBN#</th>
+                    <th>Img Alt</th>
                     <th></th>
                 </tr>
             </thead>
