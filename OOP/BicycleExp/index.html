@@ -38,10 +38,20 @@
                 <label for="model">Model</label>
                 <input type="text" id="model" class="u-full-width">
             </div>
-            <div>
-                <label for="price">Price</label>
-                <input type="text" id="price" class="u-full-width">
+            <div class="row">
+                <div class="six columns">
+                    <label for="price">Price</label>
+                    <input type="text" id="price" class="u-full-width">
+                </div>
+                <div class="six columns">
+                    <label for="availability">Availability</label>
+                    <select class="u-full-width" id="availability">
+                        <option value="stock">In Stock</option>
+                        <option value="order">Special Order</option>
+                    </select>
+                </div>
             </div>
+
             <div class="row">
                 <div class="six columns">
                     <label for="type">Type</label>
@@ -73,6 +83,7 @@
                     <th>Brand</th>
                     <th>Model</th>
                     <th>Price</th>
+                    <th>Availability</th>
                     <th>Type</th>
                     <th>Mark</th>
                     <th>ISBN#</th>
