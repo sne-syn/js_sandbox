@@ -1,20 +1,21 @@
-function Bicycle(brand, model, price, availability, type, mark, isbn, imgAlt) {
+function Bicycle(brand, model, price, availability, type, mark, imgAlt, isbn) {
     this.brand = brand;
     this.model = model;
     this.price = price;
     this.availability = availability;
     this.type = type;
     this.mark = mark;
+    this.imgAlt = imgAlt;
     this.isbn = isbn;
     // this.img = img;
-    this.imgAlt = imgAlt;
+
 }
 
 // Local Storage
 
 function Store() {}
 
-Store.prototype.getCardFromStore = function () {
+Store.prototype.getBicycleFromStore = function () {
     let bicycles;
     if (localStorage.getItem('bicycles') === null) {
         bicycles = [];
@@ -25,24 +26,24 @@ Store.prototype.getCardFromStore = function () {
     return bicycles;
 };
 
-Store.prototype.displayCard = function () {
-    const bicycles = Store.prototype.getCardFromStore();
+Store.prototype.displayBicycleInStore = function () {
+    const bicycles = Store.prototype.getBicycleFromStore();
 
     bicycles.forEach(function (bicycle) {
         const ui = new UI();
 
-        ui.addCard(bicycle);
+        ui.addBicycle(bicycle);
     });
 };
 
-Store.prototype.addCard = function (bicycle) {
-    const bicycles = Store.prototype.getCardFromStore();
+Store.prototype.addBicycleToStore = function (bicycle) {
+    const bicycles = Store.prototype.getBicycleFromStore();
     bicycles.push(bicycle);
     localStorage.setItem('bicycles', JSON.stringify(bicycles));
 };
 
-Store.prototype.removeCardFromStore = function (isbn) {
-    const bicycles = Store.prototype.getCardFromStore();
+Store.prototype.removeBicycleFromStore = function (isbn) {
+    const bicycles = Store.prototype.getBicycleFromStore();
 
     bicycles.forEach(function (bicycle, index) {
         if (bicycle.isbn === isbn) {
@@ -57,7 +58,7 @@ Store.prototype.removeCardFromStore = function (isbn) {
 
 function UI() {}
 
-UI.prototype.addCard = function (bicycle) {
+UI.prototype.addBicycle = function (bicycle) {
     const cardList = document.getElementById('card-list');
 
     const row = document.createElement('tr');
@@ -68,8 +69,9 @@ UI.prototype.addCard = function (bicycle) {
     <td>${bicycle.availability}</td>
     <td>${bicycle.type}</td>
     <td>${bicycle.mark}</td>
-    <td>${bicycle.isbn}</td>
     <td>${bicycle.imgAlt}</td>
+    <td>${bicycle.isbn}</td>
+
     <td><a href="#" class="delete">X</a></td>
     `;
     cardList.appendChild(row);
@@ -89,7 +91,7 @@ UI.prototype.showAlert = function (message, className) {
     }, 3000);
 };
 
-UI.prototype.deleteCard = function (target) {
+UI.prototype.deleteBicycle = function (target) {
     if (target.className === 'delete') {
         target.parentElement.parentElement.remove();
     }
@@ -102,7 +104,7 @@ UI.prototype.clearFields = function () {
 
 // Handlers
 
-function addCardHandler(evt) {
+function addBicycleHandler(evt) {
     const brand = document.getElementById('brand').value;
     const model = document.getElementById('model').value;
     const price = document.getElementById('price').value;
@@ -118,34 +120,35 @@ function addCardHandler(evt) {
     const mark = markTarget.options[markTarget.selectedIndex].text;
 
 
-    console.log(brand, model, price, availability, type, mark, isbn, imgAlt);
+    console.log(brand, model, price, availability, type, mark, imgAlt, isbn);
 
     const ui = new UI();
-    const bicycle = new Bicycle(brand, model, price, availability, type, mark, isbn, imgAlt);
+    const bicycle = new Bicycle(brand, model, price, availability, type, mark, imgAlt, isbn);
 
     if (brand === '' || model === '' || price === '' || isbn === '') {
         ui.showAlert('Please fill in all fields', 'error');
     } else {
-        ui.addCard(bicycle);
+        ui.addBicycle(bicycle);
         ui.showAlert('Bicycle card Added!', 'success');
-        Store.prototype.addCard(bicycle);
+        Store.prototype.addBicycleToStore(bicycle);
         ui.clearFields();
     }
 
     evt.preventDefault();
 }
 
-function deleteCardHandler(evt) {
+function deleteBicycleHandler(evt) {
     const ui = new UI();
 
-    ui.deleteCard(evt.target);
+    ui.deleteBicycle(evt.target);
     ui.showAlert('Bicycle card removed!', 'success');
-    Store.prototype.removeCardFromStore(evt.target.parentElement.previousElementSibling.textContent);
+    console.log(evt.target.parentElement.previousElementSibling.textContent);
+    Store.prototype.removeBicycleFromStore(evt.target.parentElement.previousElementSibling.textContent);
     evt.preventDefault();
 }
 
 // Event Listeners
 
-document.addEventListener('DOMContentLoaded', Store.prototype.displayCard);
-document.getElementById('card-form').addEventListener('submit', addCardHandler);
-document.getElementById('card-list').addEventListener('click', deleteCardHandler);
+document.addEventListener('DOMContentLoaded', Store.prototype.displayBicycleInStore);
+document.getElementById('card-form').addEventListener('submit', addBicycleHandler);
+document.getElementById('card-list').addEventListener('click', deleteBicycleHandler);
