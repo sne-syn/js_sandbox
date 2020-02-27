@@ -30,5 +30,4 @@ function getJokes(evt) {
   xhr.send();
 
   evt.preventDefault();
-
 }
