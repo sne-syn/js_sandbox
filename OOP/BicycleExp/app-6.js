@@ -1,4 +1,4 @@
-class Bicycle{
+class Bicycle {
     constructor(brand, model, price, availability, type, mark, imgAlt, isbn) {
         this.brand = brand;
         this.model = model;

@@ -114,7 +114,6 @@ function deleteBookHandler(evt) {
 
     ui.deleteBook(evt.target);
     ui.showAlert('Book removed!', 'success');
-    console.log(evt.target.parentElement.previousElementSibling.textContent)
     Store.removeBookFromStore(evt.target.parentElement.previousElementSibling.textContent);
 
     evt.preventDefault();
