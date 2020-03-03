@@ -1,20 +1,23 @@
 const github = new GitHub();
 
-const searchUser = document.getElementById('search-user');
+const searchUser = document.getElementById('searchUser');
+searchUser.addEventListener('keyup', inputTypingHandler);
 
-searchUser.addEventListener('keyup', (evt) => {
+function inputTypingHandler(evt) {
     const userText = evt.target.value;
 
     if (userText !== '') {
-        github.getUser(userText)
-            .then(data => {
-                if (data.profile.message === 'Not Found') {
-
-                } else {
-
-                }
-            });
-    } else {
-        //  clear profile
+        github.getUser(userText, callback);
+        github.getRepo(userText, callback);
     }
-});
+}
+
+function callback(error, response) {
+    if (error) {
+        console.log(error);
+    } else {
+        const userRep = JSON.parse(response);
+        console.log(userRep);
+    }
+
+}

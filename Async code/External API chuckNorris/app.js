@@ -3,16 +3,19 @@ document.querySelector('.get-jokes').addEventListener('click', getJokes);
 function getJokes(evt) {
 
   const number = document.getElementById('number').value;
-  console.log(number);
 
   const xhr = new XMLHttpRequest();
 
   xhr.open('GET', `http://api.icndb.com/jokes/random/${number}`, true);
 
+  xhr.onerror = function () {
+    console.log("** An error occurred during the transaction");
+  };
+
   xhr.onload = function () {
     if (this.status === 200) {
       const response = JSON.parse(this.responseText);
-      console.log(response);
+      console.log(response.type);
       let output = '';
 
       if (response.type === 'success') {
