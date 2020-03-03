@@ -32,7 +32,6 @@ class GitHub {
         xhr.onload = function () {
             if (xhr.status === 200) {
                 callback(null, this.responseText);
-
             } else {
                 callback('error ' + 'we got');
             }

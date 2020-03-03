@@ -3,13 +3,23 @@ document.getElementById('button2').addEventListener('click', getJson);
 document.getElementById('button3').addEventListener('click', getAPI);
 
 
+// function getText() {
+//   fetch('test.txt')
+//     .then (res => res.text())
+//     .then (data => {
+//       document.getElementById('output').innerHTML = data;
+//     })
+//     .catch(err => console.log(err));
+// }
+
 function getText() {
   fetch('test.txt')
-    .then (res => res.text())
-    .then (data => {
-      document.getElementById('output').innerHTML = data;
+    .then(function (res) {
+      return res.text();
     })
-    .catch(err => console.log(err));
+    .then(function(data) {
+      console.log(data);
+    });
 }
 
 function getJson() {
