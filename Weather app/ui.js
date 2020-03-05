@@ -14,7 +14,7 @@ class UI {
         this.location.textContent = response.name;
         this.desc.textContent = response.weather[0].description;
         this.string.textContent = response.main.temp;
-        this.icon.setAttribute('src', response.weather[0].icon);
+        this.icon.setAttribute('src', `http://openweathermap.org/img/w/${response.weather[0].icon}.png`);
         this.humidity.textContent = `Relative Humidity: ${response.main.humidity}`;
         this.feelsLike.textContent = `Feels Like: ${response.main.feels_like}`;
         this.pressure.textContent = `Pressure: ${response.main.pressure}`;
