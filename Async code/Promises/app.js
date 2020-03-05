@@ -40,26 +40,27 @@
 // });
 
 const userLeft = false;
-const userWatchingCats = false;
+const userWatchingCats = true;
 
-function watchTuturialCallback(callback) {
-  if (userWatchingCats && userLeft) {
-    callback("booo");
+function watchTuturialPromise() {
+  return new Promise ((resolve, reject) => {
+  if (userLeft) {
+    reject({
+      name: 'User Left',
+      message: ':('
+    });
   } else if (userWatchingCats) {
-    callback('sad');
-  } else if (userLeft) {
-    callback('(');
+    reject({
+      name: 'User Watching Cat Meme',
+      message: 'WebSimplified < Cat'
+    });
   } else {
-    callback(null, 'Happy)');
-  }
+    resolve('Thumbs up and Subscribe');
+  }});
 }
 
-function callback(err, succes) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(succes);
-  }
-}
-
-watchTuturialCallback(callback);
+watchTuturialPromise().then((message) => {
+  console.log('Success: ' + message)
+}).catcgh((error) => {
+  console.log(error.name + ' ' + error.message);
+});

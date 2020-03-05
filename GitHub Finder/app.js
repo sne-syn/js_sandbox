@@ -1,23 +1,20 @@
 const github = new GitHub();
 
 const searchUser = document.getElementById('searchUser');
-searchUser.addEventListener('keyup', inputTypingHandler);
-
-function inputTypingHandler(evt) {
+searchUser.addEventListener('keyup', (evt) => {
     const userText = evt.target.value;
 
     if (userText !== '') {
-        github.getUser(userText, callback);
-        github.getRepo(userText, callback);
-    }
-}
 
-function callback(error, response) {
-    if (error) {
-        console.log(error);
+        github.getUser(userText)
+            .then(data => {
+                if (data.profile.message === 'Not Found') {
+                    // Show alert
+                } else {
+                    // Show profile
+                }
+            });
     } else {
-        const userRep = JSON.parse(response);
-        console.log(userRep);
+       // clear profile
     }
-
-}
+});

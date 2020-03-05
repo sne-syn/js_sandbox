@@ -17,7 +17,7 @@ function getText() {
     .then(function (res) {
       return res.text();
     })
-    .then(function(data) {
+    .then(function (data) {
       console.log(data);
     });
 }
@@ -37,7 +37,13 @@ function getJson() {
 
 function getAPI() {
   fetch('https://api.github.com/users')
-    .then(res => res.json())
+  .then(res => {
+      if (!res.ok)
+        throw Error(
+          `It all went horribly wrong!!: ${res.status} ${res.statusText}`
+        );
+      else return res.json();
+    })
     .then(data => {
       let output = '';
       data.forEach(user => {
@@ -47,14 +53,3 @@ function getAPI() {
     })
     .catch(err => console.log(err));
 }
-
-// function handleErrors(res) {
-//   if (!res.ok) throw new Error(res.error);
-//   return res;
-// }
-
-// fetch('https://devcamper.io/api/v1/bootcamps/34343')
-//   .then(res => res.json())
-//   .then(handleErrors)
-//   .then(res => console.log(res.data))
-//   .catch(err => console.log(err));
