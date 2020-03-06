@@ -13,11 +13,11 @@ class UI {
     paint (response) {
         this.location.textContent = response.name;
         this.desc.textContent = response.weather[0].description;
-        this.string.textContent = response.main.temp;
+        this.string.textContent = Math.round(response.main.temp) + '°C';
         this.icon.setAttribute('src', `http://openweathermap.org/img/w/${response.weather[0].icon}.png`);
         this.humidity.textContent = `Relative Humidity: ${response.main.humidity}`;
-        this.feelsLike.textContent = `Feels Like: ${response.main.feels_like}`;
+        this.feelsLike.textContent = `Feels Like: ${Math.round(response.main.feels_like)}°C`;
         this.pressure.textContent = `Pressure: ${response.main.pressure}`;
-        this.wind.textContent = `Wind: ${response.wind.speed}`;
+        this.wind.textContent = `Wind: ${response.wind.speed}m/s`;
     }
 }
