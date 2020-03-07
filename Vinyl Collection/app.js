@@ -83,7 +83,7 @@ function profileIterator(profiles) {
                 done: false
             } : {
                 done: true
-            }
+            };
         }
     };
 }
