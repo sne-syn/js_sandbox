@@ -1,17 +1,17 @@
-function js_style() {
-    let text = document.getElementById('text');
-    text.style.fontSize = "14pt";
-    text.style.fontFamily = "Comic Sans MS";
-    text.style.color = 'blue';
-}
+// function js_style() {
+//     let text = document.getElementById('text');
+//     text.style.fontSize = "14pt";
+//     text.style.fontFamily = "Comic Sans MS";
+//     text.style.color = 'blue';
+// }
 
-let form = document.getElementById('form1');
-form.addEventListener('submit', function (evt) {
-    let firstName = document.querySelector('input[name="fname"]').value;
-    let lastName = document.querySelector('input[name="lname"]').value;
-    console.log(firstName, lastName);
-    evt.preventDefault();
-});
+// let form = document.getElementById('form1');
+// form.addEventListener('submit', function (evt) {
+//     let firstName = document.querySelector('input[name="fname"]').value;
+//     let lastName = document.querySelector('input[name="lname"]').value;
+//     console.log(firstName, lastName);
+//     evt.preventDefault();
+// });
 
 // https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php#EDITOR
 
@@ -101,11 +101,111 @@ form.addEventListener('submit', function (evt) {
 // calculate("1plus2plus3plus4");
 // calculate("1minus2plus2plus3minus4");
 
-function removeChar(str) {
-    str = str.substring(1, str.length - 1);
-    return str;
+// function removeChar(str) {
+//     str = str.substring(1, str.length - 1);
+//     return str;
+// }
+
+// console.log(removeChar('eloquent'));
+// removeChar('country');
+// removeChar('person');
+
+// ------------ num++
+
+// let number = 12;
+
+// function increase() {
+//     return number++;
+// }
+// console.log(increase()); // 12
+// console.log(number); // 13
+
+// // ------------  ++num
+
+// let number1 = 12;
+
+// function increase1() {
+//     return ++number1;
+// }
+// console.log(increase1()); // 13
+// console.log(number1); // 13
+
+
+// // ------------ num + 1
+
+// let number2 = 12;
+
+// function increase2() {
+//     return number2 + 1;
+// }
+// console.log(increase2()); // 13
+// console.log(number2); // 12
+
+
+// // ------------ argument(number)
+
+// let number4 = 12;
+
+// function increase4(number4) {
+//     return ++number4;
+// }
+// console.log(increase4(number4)); // 13
+// console.log(number4); // 12
+
+
+// // ------------ closure
+
+// function increase5() {
+//     let number5 = 12;
+
+//     return function () {
+//         number5++;
+//         console.log(number5);
+//     };
+// }
+
+// let result5 = increase5(); // превращается в функцию
+// result5();
+// result5();
+// result5();
+
+function Stopwatch() {
+    let startTime = 0;
+    let endTime = 0;
+    let running = false;
+    let duration = 0;
+
+    this.start = function () {
+        if (running) {
+            throw new Error('Stopwatch has already started');
+        }
+        startTime = new Date();
+        running = true;
+    };
+
+    this.stop = function () {
+        if (!running) {
+            throw new Error('Stopwatch is not started');
+        }
+        running = false;
+        endTime = new Date();
+        console.log(new Date().getTime());
+        const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+        duration += seconds;
+    };
+
+    this.reset = function () {
+        startTime = 0;
+        endTime = 0;
+        running = false;
+        duration = 0;
+    };
+
+    Object.defineProperty(this, 'duration', {
+        get: function () {
+            return duration;
+        }
+    });
 }
 
-console.log(removeChar('eloquent'));
-removeChar('country');
-removeChar('person');
+let sw = new Stopwatch();
