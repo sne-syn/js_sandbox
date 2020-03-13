@@ -169,43 +169,64 @@
 // result5();
 // result5();
 
-function Stopwatch() {
-    let startTime = 0;
-    let endTime = 0;
-    let running = false;
-    let duration = 0;
+// function Stopwatch() {
+//     let startTime = 0;
+//     let endTime = 0;
+//     let running = false;
+//     let duration = 0;
 
-    this.start = function () {
-        if (running) {
-            throw new Error('Stopwatch has already started');
-        }
-        startTime = new Date();
-        running = true;
-    };
+//     this.start = function () {
+//         if (running) {
+//             throw new Error('Stopwatch has already started');
+//         }
+//         startTime = new Date();
+//         running = true;
+//     };
 
-    this.stop = function () {
-        if (!running) {
-            throw new Error('Stopwatch is not started');
-        }
-        running = false;
-        endTime = new Date();
-        console.log(new Date().getTime());
-        const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
-        duration += seconds;
-    };
+//     this.stop = function () {
+//         if (!running) {
+//             throw new Error('Stopwatch is not started');
+//         }
+//         running = false;
+//         endTime = new Date();
+//         console.log(new Date().getTime());
+//         const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+//         duration += seconds;
+//     };
 
-    this.reset = function () {
-        startTime = 0;
-        endTime = 0;
-        running = false;
-        duration = 0;
-    };
+//     this.reset = function () {
+//         startTime = 0;
+//         endTime = 0;
+//         running = false;
+//         duration = 0;
+//     };
 
-    Object.defineProperty(this, 'duration', {
-        get: function () {
-            return duration;
-        }
-    });
+//     Object.defineProperty(this, 'duration', {
+//         get: function () {
+//             return duration;
+//         }
+//     });
+// }
+
+// let sw = new Stopwatch();
+
+// function find(array, element) {
+//   return  array.includes(element) ? array.indexOf(element) : 'Not found';
+
+// }
+function solution(str) {
+  let newArr = [];
+  let size = 2;
+  if (str.length % 2 !== 0) {
+    str = str + '_';
+  }
+  for (let i = 0; i < str.length / size; i++) {
+    newArr[i] = str.slice((i * size), (i * size) + size);
+  }
+  
+  return newArr;
 }
 
-let sw = new Stopwatch();
+solution("abcdef");
+solution("abcdefg");
+solution("");
