@@ -214,19 +214,56 @@
 //   return  array.includes(element) ? array.indexOf(element) : 'Not found';
 
 // }
-function solution(str) {
-  let newArr = [];
-  let size = 2;
-  if (str.length % 2 !== 0) {
-    str = str + '_';
-  }
-  for (let i = 0; i < str.length / size; i++) {
-    newArr[i] = str.slice((i * size), (i * size) + size);
-  }
-  
-  return newArr;
-}
+// function solution(str) {
+//   let newArr = [];
+//   let size = 2;
+//   if (str.length % 2 !== 0) {
+//     str = str + '_';
+//   }
+//   for (let i = 0; i < str.length / size; i++) {
+//     newArr[i] = str.slice((i * size), (i * size) + size);
+//   }
 
-solution("abcdef");
-solution("abcdefg");
-solution("");
+//   return newArr;
+// }
+
+// solution("abcdef");
+// solution("abcdefg");
+// solution("");
+
+// function solve(meal_cost, tip_percent, tax_percent) {
+//   let tip = meal_cost * tip_percent / 100;
+//   let tax = meal_cost * tax_percent / 100;
+//   let totalCost = Math.round(meal_cost + tip + tax);
+//   console.log(totalCost);
+// }
+
+// solve(12, 20, 8);
+
+// function capitalize(str) {
+//   let stringEven = '';
+//   let stringOdd = '';
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (i % 2 === 0) {
+//       stringEven = stringEven + str[i].toUpperCase();
+//       stringOdd = stringOdd + str[i];
+//     } else {
+//       stringEven = stringEven + str[i];
+//       stringOdd = stringOdd + str[i].toUpperCase();
+//     }
+//   }
+//   return [stringEven, stringOdd];
+// }
+
+// capitalize("abcdef");
+// capitalize("codewars");
+// capitalize("abracadabra");
+// capitalize("codewarriors");
+
+var isAnagram = function (test, original) {
+
+};
+
+isAnagram("foefet", "toffee");
+isAnagram("dumble", "bumble");
