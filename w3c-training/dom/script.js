@@ -241,8 +241,8 @@
 // solve(12, 20, 8);
 
 // function capitalize(str) {
-//   let stringEven = '';
-//   let stringOdd = '';
+//   let stringEven = str;
+//   let stringOdd = str;
 
 //   for (let i = 0; i < str.length; i++) {
 //     if (i % 2 === 0) {
@@ -261,9 +261,56 @@
 // capitalize("abracadabra");
 // capitalize("codewarriors");
 
-var isAnagram = function (test, original) {
+// var isAnagram = function (test, original) {
+//   if (test.length !== original.length) {
+//     return false;
+//   }
 
-};
+//   test = test.toLowerCase();
+//   original = original.toLowerCase();
+//   test = [...test].sort().join();
+//   original = [...original].sort().join();
+//   // original = [...original];
+//   // test = test;
+//   // console.log(test);
+//   // original = original.sort().join();
 
-isAnagram("foefet", "toffee");
-isAnagram("dumble", "bumble");
+//   if (test !== original) {
+//     return false;
+//   }
+
+//   return true;
+// };
+
+
+// // isAnagram("foefet", "toffee");
+// // isAnagram("dumble", "bumble");
+// isAnagram("Buckethead", "DeathCubeK");
+// isAnagram("Twoo", "WooT");
+
+// let solution = (str, ending) => str.endsWith(ending);
+
+// solution('abc', 'bc'); // returns true
+// solution('abc', 'd'); // returns false
+
+// function solution(str){
+//   str = Array.from(str).reverse().join('');
+  
+//   return str;
+// }
+
+// console.log(solution('world')); \\
+
+// function countLettersAndDigits(input) {
+//   let result = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     input[i].match(/[A-Za-z0-9]/) ? result++ : result;
+//   }
+//   return result;
+// }
+
+// countLettersAndDigits("hel2!lo");
+// countLettersAndDigits("n!!_ice!!123");
+// countLettersAndDigits("1");
+// countLettersAndDigits("12345f%%%t5t&/6");
+// countLettersAndDigits("u_n_d_e_r__S_C_O_R_E");
