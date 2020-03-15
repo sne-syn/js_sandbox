@@ -282,9 +282,39 @@
 //   return true;
 // };
 
+// var isAnagram = function(test, original) {
+//   if (test.length !== original.length) {
+//     return false;
+//   }
 
-// // isAnagram("foefet", "toffee");
-// // isAnagram("dumble", "bumble");
+//   test = test.toLowerCase();
+//   original = original.toLowerCase();
+
+//   let testCounter = {};
+//   let originalCounter = {};
+
+//   for (let letter of test) {
+//     testCounter[letter] = (testCounter[letter] || 0) + 1;
+//   }
+
+//   for (let letter of original) {
+//     originalCounter[letter] = (originalCounter[letter] || 0) + 1;
+//   }
+
+//   for (let key in testCounter) {
+//     if (!(key in originalCounter)) {
+//       return false;
+//     }
+
+//     if (originalCounter[key] !== testCounter[key]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+
+// isAnagram("foefet", "toffee");
+// isAnagram("dumble", "bumble");
 // isAnagram("Buckethead", "DeathCubeK");
 // isAnagram("Twoo", "WooT");
 
@@ -295,7 +325,7 @@
 
 // function solution(str){
 //   str = Array.from(str).reverse().join('');
-  
+
 //   return str;
 // }
 
@@ -304,7 +334,7 @@
 // function countLettersAndDigits(input) {
 //   let result = 0;
 //   for (let i = 0; i < input.length; i++) {
-//     input[i].match(/[A-Za-z0-9]/) ? result++ : result;
+//     input[i].match(/[a-z0-9]/i) ? result++ : result;
 //   }
 //   return result;
 // }
@@ -314,3 +344,163 @@
 // countLettersAndDigits("1");
 // countLettersAndDigits("12345f%%%t5t&/6");
 // countLettersAndDigits("u_n_d_e_r__S_C_O_R_E");
+// function getCharNum(char) {
+//   return char.charCodeAt() - 96;
+// }
+
+// function solve(s) {
+
+//   let strConsonantOnly = s.split(/[aeiou]+/);
+//   let max = -1;
+//   for (let i = 0; i < strConsonantOnly.length; i++) {
+//     let tmp = strConsonantOnly[i].split('');
+//     let s = 0;
+//     tmp.forEach(function (item) {
+//       s += getCharNum(item);
+//       if (max < s) {
+//         max = s;
+//       }
+//       console.log(max)
+//       return max;
+//     });
+//   }
+
+
+// console.log(strConsonantOnly)
+// console.log(newArray);
+
+
+
+// let firstElement = strConsonantOnly[1];
+// console.log(firstElement);
+
+// for (let i = 0; i < firstElement.lenght; i++) {
+//   console.log(objCharValue[firstElement[i]]);
+// }
+
+// s = Array.from(s);
+// s.forEach(function (char) {
+//   if (char.match(/a?e?i?o?u/)) {
+//     result = +0;
+//   } else {
+//     result += objCharValue[char];
+//   }
+// });
+
+// return result;
+
+//  https://www.codewars.com/kata/59c633e7dcc4053512000073/train/javascript
+// }
+
+// function getCharNum(char) {
+//   return char.charCodeAt() - 96;
+// }
+
+// function solve(s) {
+//   let result = 0;
+//   let strConsonantOnly = s.split(/[aeiou]+/);
+//   let max = -1;
+//   for (let i = 0; i < strConsonantOnly.length; i++) {
+//     let tmp = strConsonantOnly[i].split('');
+//     let s = 0;
+//     tmp.forEach(function (item) {
+//       s += getCharNum(item);
+//       if (max < s) {
+//         max = s;
+//       }
+//     });
+//   }
+//   return max;
+// }
+
+// solve("zodiacs");
+// console.log(solve("twelfthstreet"));
+// console.log(solve("strength"));
+
+// const arr = [4, 6, -1, 3, 10, 4];
+// const max = Math.max(...arr);
+
+// console.log(max);
+// 10
+
+let range = {
+  from: 97,
+  to: 120
+};
+
+console.log(range);
+
+// for (let num in range) {
+//   if (range.hasOwnProperty(num)) {
+//     alert(num); // 1, затем 2, 3, 4, 5
+//   }
+// }
+
+// range[Symbol.iterator] = function () {
+//   return {
+//     current: this.from,
+//     last: this.to,
+
+//     next() {
+//       // 4. он должен вернуть значение в виде объекта {done:.., value :...}
+//       if (this.current <= this.last) {
+//         return {
+//           done: false,
+//           value: this.current++
+//         };
+//       } else {
+//         return {
+//           done: true
+//         };
+//       }
+//     }
+//   };
+// };
+// let newObj = [];
+// for (let num of range) {
+//   console.log(String.fromCharCode(num)); // 1, затем 2, 3, 4, 5
+// }
+// console.log(newObj);
+
+// let str = 'text';
+// for (let letter of str) {
+//   console.log(letter.toUpperCase());
+// }
+
+// console.log(str);
+
+// let arr = Array.from(range);
+// console.log(arr)
+
+// let arrayLike = {
+//   0: "Hello",
+//   1: "World",
+//   length: 2
+// };
+
+// let arr = Array.from(arrayLike);
+// console.log(arr)
+
+// arr = Array.from(range);
+// alert(arr); 
+
+
+let arr1 = [1, 2, 3];
+let arr2 = [1, 2, 3];
+
+let newObj = {};
+
+arr1.map(function (item, i, arr2) {
+  newObj[item] = arr2[i];
+});
+
+console.log(newObj);
+
+let arr = ['Есть', 'жизнь', 'на', 'Земле'];
+
+let newArr = [];
+arr.map(function (item) {
+  newArr.push(item.length);
+})
+
+console.log(newArr)
