@@ -423,12 +423,12 @@
 // console.log(max);
 // 10
 
-let range = {
-  from: 97,
-  to: 120
-};
+// let range = {
+//   from: 97,
+//   to: 120
+// };
 
-console.log(range);
+// console.log(range);
 
 // for (let num in range) {
 //   if (range.hasOwnProperty(num)) {
@@ -485,22 +485,160 @@ console.log(range);
 // alert(arr); 
 
 
-let arr1 = [1, 2, 3];
-let arr2 = [1, 2, 3];
+// let arr1 = [1, 2, 3];
+// let arr2 = [1, 2, 3];
 
-let newObj = {};
+// let newObj = {};
 
-arr1.map(function (item, i, arr2) {
-  newObj[item] = arr2[i];
-});
+// arr1.map(function (item, i, arr2) {
+//   newObj[item] = arr2[i];
+// });
 
-console.log(newObj);
+// console.log(newObj);
 
-let arr = ['Есть', 'жизнь', 'на', 'Земле'];
+// let arr = ['Есть', 'жизнь', 'на', 'Земле'];
 
-let newArr = [];
-arr.map(function (item) {
-  newArr.push(item.length);
-})
+// let newArr = [];
+// arr.map(function (item) {
+//   newArr.push(item.length);
+// })
 
-console.log(newArr)
+// console.log(newArr)
+
+// const data = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+// const newData = data.flat();
+// console.log(newData);
+
+// https://zellwk.com/blog/es6/
+
+// https://www.frontender.info/es6-in-depth-iterators-and-the-for-of-loop/
+
+// https://learn.javascript.ru/object-toprimitive
+
+// https://www.freecodecamp.org/news/reduce-f47a7da511a9/
+
+// const newData = data.reduce();
+
+// var euros = [29.76, 41.85, 46.5]; 
+
+// var sum = euros.reduce( function(total, amount){
+//   return total + amount;
+// });
+
+// console.log(sum)
+
+// const companies = [{
+//     name: "Company One",
+//     category: "Finance",
+//     start: 1981,
+//     end: 2003
+//   },
+//   {
+//     name: "Company Two",
+//     category: "Retail",
+//     start: 1992,
+//     end: 2008
+//   },
+//   {
+//     name: "Company Three",
+//     category: "Auto",
+//     start: 1999,
+//     end: 2007
+//   },
+//   {
+//     name: "Company Four",
+//     category: "Retail",
+//     start: 1989,
+//     end: 2010
+//   },
+//   {
+//     name: "Company Five",
+//     category: "Technology",
+//     start: 2009,
+//     end: 2014
+//   },
+//   {
+//     name: "Company Six",
+//     category: "Finance",
+//     start: 1987,
+//     end: 2010
+//   },
+//   {
+//     name: "Company Seven",
+//     category: "Auto",
+//     start: 1986,
+//     end: 1996
+//   },
+//   {
+//     name: "Company Eight",
+//     category: "Technology",
+//     start: 2011,
+//     end: 2016
+//   },
+//   {
+//     name: "Company Nine",
+//     category: "Retail",
+//     start: 1981,
+//     end: 1989
+//   }
+// ];
+
+// const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+
+
+// // const canDrink = ages.filter(function(age) {
+// //   if(age >= 21) {
+// //     return true;
+// //   }
+// // });
+
+// const canDrink = ages.filter(age => age >= 21);
+
+// console.log(canDrink);
+
+// const retailCompanies = companies.filter(company => company.category === 'Retail');
+
+// console.log(retailCompanies);
+
+// const companyNames = companies.map(company => company.name);
+
+// console.log(companyNames);
+
+// const twoOldestAges = (ages) => ages.sort((a,b) => (a - b)).slice(- 2);
+
+// console.log(twoOldestAges([1, 2, 10, 8]));
+
+// function indexEqualsValue(a) {
+//   let result = -1;
+//   a.find(function (element, index) {
+//     if (element === index) {
+//       return result = element;
+//     } 
+//   });
+//   return result;
+//   // https://www.codewars.com/kata/5b7176768adeae9bc9000056/train/javascript
+// }
+
+// indexEqualsValue([-8, 0, 2, 5]);
+// indexEqualsValue([-1, 0, 3, 6]);
+
+function sumOfMinimums(arr) {
+  let result = 0;
+  arr.forEach(function (x) {
+    result += Math.min(...x);
+  });
+  return result;
+}
+
+sumOfMinimums([
+  [7, 9, 8, 6, 2],
+  [6, 3, 5, 4, 3],
+  [5, 8, 7, 4, 5]
+]);
+sumOfMinimums([
+  [11, 12, 14, 54],
+  [67, 89, 90, 56],
+  [7, 9, 4, 3],
+  [9, 8, 6, 7]
+]);
