@@ -528,65 +528,6 @@
 
 // console.log(sum)
 
-// const companies = [{
-//     name: "Company One",
-//     category: "Finance",
-//     start: 1981,
-//     end: 2003
-//   },
-//   {
-//     name: "Company Two",
-//     category: "Retail",
-//     start: 1992,
-//     end: 2008
-//   },
-//   {
-//     name: "Company Three",
-//     category: "Auto",
-//     start: 1999,
-//     end: 2007
-//   },
-//   {
-//     name: "Company Four",
-//     category: "Retail",
-//     start: 1989,
-//     end: 2010
-//   },
-//   {
-//     name: "Company Five",
-//     category: "Technology",
-//     start: 2009,
-//     end: 2014
-//   },
-//   {
-//     name: "Company Six",
-//     category: "Finance",
-//     start: 1987,
-//     end: 2010
-//   },
-//   {
-//     name: "Company Seven",
-//     category: "Auto",
-//     start: 1986,
-//     end: 1996
-//   },
-//   {
-//     name: "Company Eight",
-//     category: "Technology",
-//     start: 2011,
-//     end: 2016
-//   },
-//   {
-//     name: "Company Nine",
-//     category: "Retail",
-//     start: 1981,
-//     end: 1989
-//   }
-// ];
-
-// const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
-
-
 // // const canDrink = ages.filter(function(age) {
 // //   if(age >= 21) {
 // //     return true;
@@ -609,36 +550,110 @@
 
 // console.log(twoOldestAges([1, 2, 10, 8]));
 
-// function indexEqualsValue(a) {
-//   let result = -1;
-//   a.find(function (element, index) {
-//     if (element === index) {
-//       return result = element;
-//     } 
-//   });
-//   return result;
-//   // https://www.codewars.com/kata/5b7176768adeae9bc9000056/train/javascript
-// }
+function indexEqualsValue(a) {
+  a.reduce((acum, current, index) => {
 
-// indexEqualsValue([-8, 0, 2, 5]);
-// indexEqualsValue([-1, 0, 3, 6]);
+  }, 0);
 
-function sumOfMinimums(arr) {
-  let result = 0;
-  arr.forEach(function (x) {
-    result += Math.min(...x);
-  });
-  return result;
+  //   let result = -1;
+  //   a.find(function (element, index) {
+  //     if (element === index) {
+  //       return result = element;
+  //     } 
+  //   });
+  //   return result;
+  //   // https://www.codewars.com/kata/5b7176768adeae9bc9000056/train/javascript
 }
 
-sumOfMinimums([
-  [7, 9, 8, 6, 2],
-  [6, 3, 5, 4, 3],
-  [5, 8, 7, 4, 5]
-]);
-sumOfMinimums([
-  [11, 12, 14, 54],
-  [67, 89, 90, 56],
-  [7, 9, 4, 3],
-  [9, 8, 6, 7]
-]);
+console.log(indexEqualsValue([-8, 0, 2, 5]));
+indexEqualsValue([-1, 0, 3, 6]);
+
+// function sumOfMinimums(arr) {
+//   let result = 0;
+//   arr.forEach(function (x) {
+//     result += Math.min(...x);
+//   });
+//   return result;
+// }
+
+// sumOfMinimums([
+//   [7, 9, 8, 6, 2],
+//   [6, 3, 5, 4, 3],
+//   [5, 8, 7, 4, 5]
+// ]);
+// sumOfMinimums([
+//   [11, 12, 14, 54],
+//   [67, 89, 90, 56],
+//   [7, 9, 4, 3],
+//   [9, 8, 6, 7]
+// ]);
+
+// const fruitBasket = ['banana', 'cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig' ];
+
+
+// const count = fruitBasket.reduce((total, amount) => {
+//   if (!total[amount]) {
+//     total[amount] = 1;
+//   } else {
+//     total[amount] = total[amount] + 1;
+//   }
+//   return total;
+// }, {});
+
+// console.log(count);
+
+// const data = {t: {
+//   a: 'happy',
+//   b: 'robin',
+//   c: ['blue', 'green']
+// },
+// u: {
+//   a: 'tired',
+//   b: 'panther',
+//   c: ['green', 'black', 'orange', 'blue']
+// },
+// l: {
+//   a: 'sad',
+//   b: 'goldfish',
+//   c: ['green', 'red']
+// }
+// };
+
+// const {
+//   u: {a: adjective , b: noun}
+// } = data;
+
+// console.log('Look, here as a ' + adjective, noun);
+
+// let dataFilter = data.reduce((total, amount, index, array) => {
+//   amount.c.forEach(function (item) {
+//     if (total.indexOf(item) === -1)
+//       total.push(item);
+//   });
+//   return total;
+// }, []);
+
+// console.log(dataFilter);
+
+// let reducer = (acum, current) => {
+//   return {...acum, [current.b]: current};
+// };
+
+// let createObj = data.reduce(reducer, {});
+
+// console.log(createObj);
+
+
+function rowWeights(array) {
+  // let evenSum = 0;
+  // let oddSum = 0;
+  // for (let i = 0; i < array.length; i++) {
+  //   (i % 2 === 0) ? evenSum += array[i]: oddSum += array[i];
+  // }
+
+  // return [evenSum, oddSum];
+}
+// console.log(rowWeights([80])); // 80, 0
+// rowWeights([100,50]); // 100 50
+// rowWeights([50,60,70,80]); // [120,140]
+console.log(rowWeights([29, 83, 67, 53, 19, 28, 96]));
