@@ -169,46 +169,46 @@
 // result5();
 // result5();
 
-// function Stopwatch() {
-//     let startTime = 0;
-//     let endTime = 0;
-//     let running = false;
-//     let duration = 0;
+function Stopwatch() {
+    let startTime = 0;
+    let endTime = 0;
+    let running = false;
+    let duration = 0;
 
-//     this.start = function () {
-//         if (running) {
-//             throw new Error('Stopwatch has already started');
-//         }
-//         startTime = new Date();
-//         running = true;
-//     };
+    this.start = function () {
+        if (running) {
+            throw new Error('Stopwatch has already started');
+        }
+        startTime = new Date();
+        running = true;
+    };
 
-//     this.stop = function () {
-//         if (!running) {
-//             throw new Error('Stopwatch is not started');
-//         }
-//         running = false;
-//         endTime = new Date();
-//         console.log(new Date().getTime());
-//         const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
-//         duration += seconds;
-//     };
+    this.stop = function () {
+        if (!running) {
+            throw new Error('Stopwatch is not started');
+        }
+        running = false;
+        endTime = new Date();
+        console.log(new Date().getTime());
+        const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+        duration += seconds;
+    };
 
-//     this.reset = function () {
-//         startTime = 0;
-//         endTime = 0;
-//         running = false;
-//         duration = 0;
-//     };
+    this.reset = function () {
+        startTime = 0;
+        endTime = 0;
+        running = false;
+        duration = 0;
+    };
 
-//     Object.defineProperty(this, 'duration', {
-//         get: function () {
-//             return duration;
-//         }
-//     });
-// }
+    Object.defineProperty(this, 'duration', {
+        get: function () {
+            return duration;
+        }
+    });
+}
 
-// let sw = new Stopwatch();
+let sw = new Stopwatch();
 
 // function find(array, element) {
 //   return  array.includes(element) ? array.indexOf(element) : 'Not found';
@@ -644,7 +644,7 @@ indexEqualsValue([-1, 0, 3, 6]);
 // console.log(createObj);
 
 
-function rowWeights(array) {
+// function rowWeights(array) {
   // let evenSum = 0;
   // let oddSum = 0;
   // for (let i = 0; i < array.length; i++) {
@@ -652,8 +652,8 @@ function rowWeights(array) {
   // }
 
   // return [evenSum, oddSum];
-}
+// }
 // console.log(rowWeights([80])); // 80, 0
 // rowWeights([100,50]); // 100 50
 // rowWeights([50,60,70,80]); // [120,140]
-console.log(rowWeights([29, 83, 67, 53, 19, 28, 96]));
+// console.log(rowWeights([29, 83, 67, 53, 19, 28, 96]));
