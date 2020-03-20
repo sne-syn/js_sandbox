@@ -18,7 +18,6 @@ function Stopwatch() {
         }
         running = false;
         endTime = new Date();
-        console.log(new Date().getTime());
         const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
         duration += seconds;
     };

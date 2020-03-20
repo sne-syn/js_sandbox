@@ -169,46 +169,46 @@
 // result5();
 // result5();
 
-function Stopwatch() {
-    let startTime = 0;
-    let endTime = 0;
-    let running = false;
-    let duration = 0;
+// function Stopwatch() {
+//     let startTime = 0;
+//     let endTime = 0;
+//     let running = false;
+//     let duration = 0;
 
-    this.start = function () {
-        if (running) {
-            throw new Error('Stopwatch has already started');
-        }
-        startTime = new Date();
-        running = true;
-    };
+//     this.start = function () {
+//         if (running) {
+//             throw new Error('Stopwatch has already started');
+//         }
+//         startTime = new Date();
+//         running = true;
+//     };
 
-    this.stop = function () {
-        if (!running) {
-            throw new Error('Stopwatch is not started');
-        }
-        running = false;
-        endTime = new Date();
-        console.log(new Date().getTime());
-        const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
-        duration += seconds;
-    };
+//     this.stop = function () {
+//         if (!running) {
+//             throw new Error('Stopwatch is not started');
+//         }
+//         running = false;
+//         endTime = new Date();
+//         console.log(new Date().getTime());
+//         const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+//         duration += seconds;
+//     };
 
-    this.reset = function () {
-        startTime = 0;
-        endTime = 0;
-        running = false;
-        duration = 0;
-    };
+//     this.reset = function () {
+//         startTime = 0;
+//         endTime = 0;
+//         running = false;
+//         duration = 0;
+//     };
 
-    Object.defineProperty(this, 'duration', {
-        get: function () {
-            return duration;
-        }
-    });
-}
+//     Object.defineProperty(this, 'duration', {
+//         get: function () {
+//             return duration;
+//         }
+//     });
+// }
 
-let sw = new Stopwatch();
+// let sw = new Stopwatch();
 
 // function find(array, element) {
 //   return  array.includes(element) ? array.indexOf(element) : 'Not found';
@@ -550,23 +550,23 @@ let sw = new Stopwatch();
 
 // console.log(twoOldestAges([1, 2, 10, 8]));
 
-function indexEqualsValue(a) {
-  a.reduce((acum, current, index) => {
+// function indexEqualsValue(a) {
+//   a.reduce((acum, current, index) => {
 
-  }, 0);
+//   }, 0);
 
-  //   let result = -1;
-  //   a.find(function (element, index) {
-  //     if (element === index) {
-  //       return result = element;
-  //     } 
-  //   });
-  //   return result;
-  //   // https://www.codewars.com/kata/5b7176768adeae9bc9000056/train/javascript
-}
+//   //   let result = -1;
+//   //   a.find(function (element, index) {
+//   //     if (element === index) {
+//   //       return result = element;
+//   //     } 
+//   //   });
+//   //   return result;
+//   //   // https://www.codewars.com/kata/5b7176768adeae9bc9000056/train/javascript
+// }
 
-console.log(indexEqualsValue([-8, 0, 2, 5]));
-indexEqualsValue([-1, 0, 3, 6]);
+// console.log(indexEqualsValue([-8, 0, 2, 5]));
+// indexEqualsValue([-1, 0, 3, 6]);
 
 // function sumOfMinimums(arr) {
 //   let result = 0;
@@ -645,15 +645,45 @@ indexEqualsValue([-1, 0, 3, 6]);
 
 
 // function rowWeights(array) {
-  // let evenSum = 0;
-  // let oddSum = 0;
-  // for (let i = 0; i < array.length; i++) {
-  //   (i % 2 === 0) ? evenSum += array[i]: oddSum += array[i];
-  // }
+// let evenSum = 0;
+// let oddSum = 0;
+// for (let i = 0; i < array.length; i++) {
+//   (i % 2 === 0) ? evenSum += array[i]: oddSum += array[i];
+// }
 
-  // return [evenSum, oddSum];
+// return [evenSum, oddSum];
 // }
 // console.log(rowWeights([80])); // 80, 0
 // rowWeights([100,50]); // 100 50
 // rowWeights([50,60,70,80]); // [120,140]
 // console.log(rowWeights([29, 83, 67, 53, 19, 28, 96]));
+
+// function differenceInAges(ages) {
+//   let newArr = ages.reduce((accum, val, index, array) => {
+
+//     return accum + val;
+//   });
+// }
+
+function differenceInAges(ages) {
+let minAge = Math.min(...ages);
+let maxAge = Math.max(...ages);
+
+return [minAge, maxAge, maxAge-minAge];
+}
+
+console.log(differenceInAges([82, 15, 6, 38, 35]));
+console.log(differenceInAges([57, 99, 14, 32]));
+
+var bred = (function a() {
+  return 1
+}, function b() {
+  return 2
+})();
+
+console.log(bred);
+
+
+//https://www.codewars.com/kata/53d2697b7152a5e13d000b82
+
+// https://qna.habr.com/q/381494
