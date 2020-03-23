@@ -104,7 +104,6 @@ let input6 = document.querySelector('.i-6');
 function t6() {
     let num = +input6.value;
     for (let i = 0; i < num; i++) {
-        console.log(i);
         output6.innerHTML += '****** <br>';
     }
 }
@@ -256,7 +255,7 @@ document.querySelector('.b-12').onclick = t12;
 let input13 = document.querySelectorAll('.i-13');
 
 function t13() {
-    for (let i = 0; i < input13.length; i++) {
+    for (let i = 1; i < input13.length; i++) {
         input13[i].value = i + 1;
     }
 }
