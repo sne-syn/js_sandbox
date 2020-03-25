@@ -8,12 +8,14 @@
 let output1 = document.querySelector('.out-1');
 
 function t1() {
+    let out = '';
     for (var i = 0; i < 3; i++) {
         for (var k = 0; k < 3; k++) {
-            output1.textContent += `*`
+            out += `*`;
         }
-        output1.textContent += `_`;
+        out += `_`;
     }
+    output1.textContent = out;
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -31,20 +33,19 @@ document.querySelector('.b-1').onclick = t1;
 // <p>Решить задачу с помощью вложенных циклов. Внешний цикл выводит цифры и перенос строки br, , второй звездочки, знак подчеркивания и знак переноса.</p>
 
 let output2 = document.querySelector('.out-2');
-
 function t2() {
-    output2.innerHTML = '';
-
+    let out = '';
     for (var i = 1; i < 4; i++) {
-        output2.innerHTML += `${i}<br>`;
+        out += `${i}<br>`;
         for (var k = 0; k < 3; k++) {
-            output2.innerHTML += `*_`;
+            out += `*_`;
             if (k === 2) {
-                output2.innerHTML += `<br>`;
+                out += `<br>`;
             }
         }
 
     }
+    output2.innerHTML = out;
 }
 
 document.querySelector('.b-2').onclick = t2;
@@ -61,16 +62,15 @@ document.querySelector('.b-2').onclick = t2;
 // <p>Решить задачу с помощью вложенных циклов. Внешний цикл выводит перенос строки br,  внутренний -  звездочки, знак подчеркивания.</p>
 
 let output3 = document.querySelector('.out-3');
-
 function t3() {
-    output3.innerHTML = '';
-
+    let out = '';
     for (var i = 0; i < 4; i++) {
         for (var k = 0; k < 3; k++) {
-            output3.innerHTML += `*_`;
+            out += `*_`;
         }
-        output3.innerHTML += `<br>`;
+        out += `<br>`;
     }
+    output3.innerHTML = out;
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -83,15 +83,14 @@ document.querySelector('.b-3').onclick = t3;
 let output4 = document.querySelector('.out-4');
 
 function t4() {
-    output4.innerHTML = '';
-
+    let out = '';
     for (var i = 1; i < 4; i++) {
-        output4.innerHTML += `${i}_`;
+        out += `${i}_`;
         for (var k = 1; k < 6; k++) {
-            output4.innerHTML += `${k} `;
+            out += `${k} `;
         }
-
     }
+    output4.innerHTML = out;
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -109,12 +108,14 @@ document.querySelector('.b-4').onclick = t4;
 let output5 = document.querySelector('.out-5');
 
 function t5() {
+    let out = '';
     for (var i = 0; i < 3; i++) {
         for (var k = 0; k < 6; k++) {
-            output5.innerHTML += (k % 2 === 0) ? 1 : 0;
+            out += (k % 2 === 0) ? 1 : 0;
         }
-        output5.innerHTML += `<br>`;
+        out += `<br>`;
     }
+    output5.innerHTML = out;
 }
 
 document.querySelector('.b-5').onclick = t5;
@@ -132,18 +133,20 @@ document.querySelector('.b-5').onclick = t5;
 let output6 = document.querySelector('.out-6');
 
 function t6() {
+    let out = '';
     for (var i = 0; i < 3; i++) {
         for (var k = 0; k < 6; k++) {
             if (k === 0 || k === 4) {
-                output6.innerHTML += 1;
+                out += 1;
             } else if (k === 2 || k === 5) {
-                output6.innerHTML += `x`;
+                out += `x`;
             } else {
-                output6.innerHTML += 0;
+                out += 0;
             }
         }
-        output6.innerHTML += `<br>`;
+        out += `<br>`;
     }
+    output6.innerHTML = out;
 }
 
 document.querySelector('.b-6').onclick = t6;
@@ -162,12 +165,14 @@ document.querySelector('.b-6').onclick = t6;
 let output7 = document.querySelector('.out-7');
 
 function t7() {
-    for (var i = 1; i < 6; i++) {
+    let out = '';
+    for (var i = 1; i < 5; i++) {
         for (var k = 0; k < i; k++) {
-            output7.innerHTML += `*`;
+            out += `*`;
         }
-        output7.innerHTML += `<br>`;
+        out += `<br>`;
     }
+    output7.innerHTML = out;
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -187,12 +192,14 @@ document.querySelector('.b-7').onclick = t7;
 let output8 = document.querySelector('.out-8');
 
 function t8() {
+    let out = '';
     for (var i = 0; i < 5; i++) {
         for (var k = 5; k > i; k--) {
-            output8.innerHTML += `*`;
+            out += `*`;
         }
-        output8.innerHTML += `<br>`;
+        out += `<br>`;
     }
+    output8.innerHTML = out;
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -212,12 +219,14 @@ document.querySelector('.b-8').onclick = t8;
 let output9 = document.querySelector('.out-9');
 
 function t9() {
+    let out = '';
     for (var i = 2; i < 7; i++) {
         for (var k = 1; k < i; k++) {
-            output9.innerHTML += `${k} `;
+            out += `${k} `;
         }
-        output9.innerHTML += `<br>`;
+        out += `<br>`;
     }
+    output9.innerHTML = out;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -238,17 +247,18 @@ document.querySelector('.b-9').onclick = t9;
 let output10 = document.querySelector('.out-10');
 
 function t10() {
+    let out = '';
     for (var i = 0; i < 5; i++) {
         for (var k = 1; k < 11; k++) {
             if ((i * 10 + k) < 10) {
-                output10.innerHTML += `0${k} `;
+                out += `0${k} `;
             } else {
-                output10.innerHTML += `${i * 10 + k} `;
+                out += `${i * 10 + k} `;
             }
-
         }
-        output10.innerHTML += `<br>`;
+        out += `<br>`;
     }
+    output10.innerHTML = out;
 }
 
 document.querySelector('.b-10').onclick = t10;
